@@ -1,0 +1,16 @@
+prettytable
+tqdm
+tyro==1.0.13
+torchrunx==0.3.4
+warp-lang==1.13.0
+mujoco-warp==3.8.1
+trimesh==4.12.2
+viser==1.0.27
+mediapy==1.2.6
+tensordict==0.12.3
+tensorboard==2.20.0
+onnx==1.21.0
+onnxscript==0.7.0
+wandb
+GitPython
+torchvision==0.21.0

@@ -1,0 +1,27 @@
+{
+  "deployment_feedback_gain": 0.5,
+  "zero_shot_transfer": false,
+  "training_run": "${ORIGINAL_PROJECT}/artifacts/rl03-feedback-aligned",
+  "checkpoint": "model_499.pt",
+  "iterations": 500,
+  "environment_steps": 32768000,
+  "policy_sha256": "076709221561fbadb6595dba122a965a014c33533021251618dbff8ec66ea624",
+  "onnx_sha256": "db81d19e33d6e2e2f71d5e796e9e39c7e227d23d0274195fe7a2390552a40c3e",
+  "training_backend": "MuJoCo-Warp",
+  "primary_evaluation_backend": "native MuJoCo CPU",
+  "real_robot_tested": false,
+  "cross_engine_evaluation_backend": "Isaac Sim 4.5 / PhysX CPU",
+  "cross_engine_nominal_pass": true,
+  "cross_engine_audit": "physx/exact-geometry-audit.json",
+  "online_video": "g1-ppo-physx-online.mp4",
+  "cross_engine_gain_candidates": [
+    0.5,
+    1,
+    2,
+    4
+  ],
+  "cross_engine_robustness_tested": false,
+  "minimum_physx_bar_gap_m": 0.0018945215232089117,
+  "source_commit": "8ce7be6876dfcc1d2d31e83210f02f4ae2bac047",
+  "tests_passed": 17
+}

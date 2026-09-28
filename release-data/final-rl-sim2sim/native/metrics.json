@@ -1,0 +1,51 @@
+[
+  {
+    "success": true,
+    "failed_requirements": [],
+    "grounded_start": true,
+    "took_off": true,
+    "all_above_bar": true,
+    "all_crossed": true,
+    "between_posts": true,
+    "bar_contacts": 0,
+    "torso_up_at_crossing": 0.9664254956035015,
+    "landed_on_mat": true,
+    "premature_mat_contact": false,
+    "torso_crossing_time_s": 1.1049999999999875,
+    "first_full_clearance_time_s": 1.4274999999999807,
+    "head_before_back_support": false,
+    "first_mat_contact_head": false,
+    "first_mat_torso_up": 0.9675933537959232,
+    "first_mat_contact_geoms": [
+      "robot/right_hand_collision"
+    ],
+    "first_mat_time_s": 1.4699999999999798,
+    "first_back_support_time_s": 1.5349999999999784,
+    "back_support_torso_up": 0.9967987409010673,
+    "finished_on_landing_side": true,
+    "final_torso_up": 0.943756745387231,
+    "max_joint_limit_violation_rad": 0.00836383466185231,
+    "max_joint_speed_ratio": 0.9341972737116524,
+    "seed": 0,
+    "perturb": 0.02,
+    "feedback_disabled": false,
+    "bar_height_m": 0.8,
+    "backend": "native MuJoCo CPU",
+    "controller_sha256": "076709221561fbadb6595dba122a965a014c33533021251618dbff8ec66ea624",
+    "acceptance_sha256": "32446b02a14d55590db044d230646bb28bb931c66a2d8f486ee525e9cd65cb17",
+    "reference_only": false,
+    "policy": "artifacts/rl-gain-calibration/gain0.5.torchscript",
+    "max_pelvis_height_m": 1.1876532588956463,
+    "final_root_xyz": [
+      -1.5289718585835819,
+      -0.03456082652634559,
+      0.2639096731683116
+    ],
+    "video_frames": 131,
+    "minimum_clearance_m": 0.03372031516961872,
+    "motor_model": "dc",
+    "max_air_time_s": 0.5849999999999985,
+    "max_joint_speed_rad_s": 23.444961417285292,
+    "torque_saturation_fraction": 0.008423269281389839
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "backend": "Isaac Sim 4.5 / PhysX",
+  "policy": "artifacts/final-rl-sim2sim/policy.torchscript",
+  "steps": 131,
+  "dt": 0.0025,
+  "control_dt": 0.02,
+  "mat_model": "rigid PhysX box, different from MuJoCo soft contact",
+  "audit_passed": true,
+  "audit_file": "exact-geometry-audit.json",
+  "policy_sha256": "076709221561fbadb6595dba122a965a014c33533021251618dbff8ec66ea624",
+  "online_video_sha256": "8bc0084c6676836d35dd520330a3753ffd9566edd79fe9e8cbb1860de1814f9c"
+}

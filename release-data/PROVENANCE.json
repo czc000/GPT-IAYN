@@ -1,0 +1,158 @@
+{
+  "source_commit": "8ce7be6876dfcc1d2d31e83210f02f4ae2bac047",
+  "note": "Numerical/model bytes unchanged; JSON paths normalized for release. Robot meshes are fetched separately.",
+  "files": {
+    "release-data/reference/motion.npz": {
+      "original_sha256": "a4b2e6b666078da4b4f4015a005a2988d9580b33596b40339adb8bbf5d06eb7c",
+      "origin": "standing-artifacts/reference/motion.npz"
+    },
+    "release-data/rl-reference/motion.npz": {
+      "original_sha256": "48690ec5cec9e7b78bb50c848d939ba55dcf6937b75fcd2ff7af1ea8071d1a40",
+      "origin": "standing-artifacts/rl-reference/motion.npz"
+    },
+    "release-data/final/reference.npz": {
+      "original_sha256": "a4b2e6b666078da4b4f4015a005a2988d9580b33596b40339adb8bbf5d06eb7c",
+      "origin": "standing-artifacts/final/reference.npz"
+    },
+    "release-data/final/contract.json": {
+      "original_sha256": "1334fb9b70132ee2a70154717c237d1cbe7f3ff12ce9c17c86c8e5ef30a4d563",
+      "origin": "standing-artifacts/final/contract.json"
+    },
+    "release-data/final/frozen-controller.npz": {
+      "original_sha256": "b8c585ad8c51e833bdca6b949d1728f642977ce48f2bde98e3dab79fcbc24a4c",
+      "origin": "standing-artifacts/final/frozen-controller.npz"
+    },
+    "release-data/final/nominal-trajectory.npz": {
+      "original_sha256": "3606c50c8c10027cb4f0a73413aa4a4f501b4f28daf05177603769de329ee83b",
+      "origin": "standing-artifacts/final/nominal-trajectory.npz"
+    },
+    "release-data/final/metrics-20-seeds.json": {
+      "original_sha256": "483f45c753eba0bee01f63f734557151106c90fbb55355cc4221f82461653d12",
+      "origin": "standing-artifacts/final/metrics-20-seeds.json"
+    },
+    "release-data/final/scene/scene.xml": {
+      "original_sha256": "4b8a618b7c501fa6663ad4bcbb1911246aa84fbcdc471799b120824e71bd3cd6",
+      "origin": "standing-artifacts/final/scene/scene.xml"
+    },
+    "release-data/final-rl-sim2sim/policy.torchscript": {
+      "original_sha256": "076709221561fbadb6595dba122a965a014c33533021251618dbff8ec66ea624",
+      "origin": "standing-artifacts/final-rl-sim2sim/policy.torchscript"
+    },
+    "release-data/final-rl-sim2sim/policy.onnx": {
+      "original_sha256": "db81d19e33d6e2e2f71d5e796e9e39c7e227d23d0274195fe7a2390552a40c3e",
+      "origin": "standing-artifacts/final-rl-sim2sim/policy.onnx"
+    },
+    "release-data/final-rl-sim2sim/training-checkpoint.pt": {
+      "original_sha256": "aefa344af6ffe550233a170372ddeb81b3da998f4c7f0995d7c8254f48fe6759",
+      "origin": "standing-artifacts/final-rl-sim2sim/training-checkpoint.pt"
+    },
+    "release-data/final-rl-sim2sim/evaluation-reference.npz": {
+      "original_sha256": "48690ec5cec9e7b78bb50c848d939ba55dcf6937b75fcd2ff7af1ea8071d1a40",
+      "origin": "standing-artifacts/final-rl-sim2sim/evaluation-reference.npz"
+    },
+    "release-data/final-rl-sim2sim/commands.npz": {
+      "original_sha256": "0f10ac7b26233164cd92afa3bca44cb4d2c7576f6d4a9f5f17abd4954836045e",
+      "origin": "standing-artifacts/final-rl-sim2sim/commands.npz"
+    },
+    "release-data/final-rl-sim2sim/contract.json": {
+      "original_sha256": "fed882ab8f9116ee8f897c2abf86372e7b74a1b9587d246c20b5357811089f73",
+      "origin": "standing-artifacts/final-rl-sim2sim/contract.json"
+    },
+    "release-data/final-rl-sim2sim/manifest.json": {
+      "original_sha256": "16767bed6355f3e00d2b93a13f34f5ecbb43c517df45fc69300d07e8bde897b5",
+      "origin": "standing-artifacts/final-rl-sim2sim/manifest.json"
+    },
+    "release-data/final-rl-sim2sim/export-verification.json": {
+      "original_sha256": "ad2b9fc5b7104c1a391a1748f411f557f28a5bf62e8f90ea70cbbf600608b3cd",
+      "origin": "standing-artifacts/final-rl-sim2sim/export-verification.json"
+    },
+    "release-data/final-rl-sim2sim/scene/scene.xml": {
+      "original_sha256": "635fe5ce780d0ee412786396fe8054b120922d9d150277ff6a0c21d2e84bfe2e",
+      "origin": "standing-artifacts/final-rl-sim2sim/scene/scene.xml"
+    },
+    "release-data/final-rl-sim2sim/native/seed0.npz": {
+      "original_sha256": "e09e682e3f2f17fa05ec806fedf95fe3250d6b1131d0cc97867e83b7f8250900",
+      "origin": "standing-artifacts/final-rl-sim2sim/native/seed0.npz"
+    },
+    "release-data/final-rl-sim2sim/native/metrics.json": {
+      "original_sha256": "d98b50d10defe369152c8d4da7e8677c6aa26c6b1cfc13f44cffbf7861ef5547",
+      "origin": "standing-artifacts/final-rl-sim2sim/native/metrics.json"
+    },
+    "release-data/final-rl-sim2sim/physx/trajectory.npz": {
+      "original_sha256": "a4f7a476a98b4ad9870630537be8e0e31440187e1b802af5d233f0ed2e260505",
+      "origin": "standing-artifacts/final-rl-sim2sim/physx/trajectory.npz"
+    },
+    "release-data/final-rl-sim2sim/physx/contacts.json": {
+      "original_sha256": "cc74fc29d38dbdb9541355a3cadc25d4701f35fde5b702c2655b9e22ed293da1",
+      "origin": "standing-artifacts/final-rl-sim2sim/physx/contacts.json"
+    },
+    "release-data/final-rl-sim2sim/physx/exact-geometry-audit.json": {
+      "original_sha256": "9d2403139ba155445e81db140a2450f0501e6def919bcaf785150ba97d85559d",
+      "origin": "standing-artifacts/final-rl-sim2sim/physx/exact-geometry-audit.json"
+    },
+    "release-data/final-rl-sim2sim/physx/manifest.json": {
+      "original_sha256": "9d2b7fd187abb6c76e25295e638fecd48b7f3032371cccba65800140a8c106ec",
+      "origin": "standing-artifacts/final-rl-sim2sim/physx/manifest.json"
+    },
+    "release-data/final-rl-sim2sim/validation/rl03-holdout010.json": {
+      "original_sha256": "a7a08fa59a31e054288025f4bc2d41aa8449d6f4e80ecadfe0694b7c818e8cc9",
+      "origin": "standing-artifacts/final-rl-sim2sim/validation/rl03-holdout010.json"
+    },
+    "release-data/final-rl-sim2sim/validation/rl03-holdout025.json": {
+      "original_sha256": "3916a75c3c4747942b4c33fcb06d823b6906d0e17c69aaa7db84e51cd50a3fe6",
+      "origin": "standing-artifacts/final-rl-sim2sim/validation/rl03-holdout025.json"
+    },
+    "release-data/final-rl-sim2sim/validation/rl-baseline-holdout010.json": {
+      "original_sha256": "88fc7327dbc4c973fd3b2bbbd3e4880c8b59c5d1a0191db1e6dae9b8497ad205",
+      "origin": "standing-artifacts/final-rl-sim2sim/validation/rl-baseline-holdout010.json"
+    },
+    "release-data/final-rl-sim2sim/validation/rl-baseline-holdout025.json": {
+      "original_sha256": "db2ad18f79500e9f00edda18ab5c3a6d99907f7b30747d1cce9c04d765cfad0d",
+      "origin": "standing-artifacts/final-rl-sim2sim/validation/rl-baseline-holdout025.json"
+    },
+    "release-data/final-rl-sim2sim/validation/rl03-ablation-holdout010.json": {
+      "original_sha256": "9b4d61beb65707b6ddf1b17215c0638a6f704602fd1b0f7e73a3304a5858bcbf",
+      "origin": "standing-artifacts/final-rl-sim2sim/validation/rl03-ablation-holdout010.json"
+    },
+    "release-data/final-rl-sim2sim/validation/rl-calibrated-holdout010.json": {
+      "original_sha256": "78b25a30978da5832a6d85a2cc9839b6b92502f3e91924609d4e435cbbdfd5ff",
+      "origin": "standing-artifacts/final-rl-sim2sim/validation/rl-calibrated-holdout010.json"
+    },
+    "release-data/final-rl-sim2sim/validation/rl-calibrated-holdout025.json": {
+      "original_sha256": "3fbcba8e8d65293fca6735f30a5d635fa14efcd97b3de329345b54a0efd68869",
+      "origin": "standing-artifacts/final-rl-sim2sim/validation/rl-calibrated-holdout025.json"
+    },
+    "release-data/final-rl-sim2sim/validation/rl-calibrated-baseline010.json": {
+      "original_sha256": "fadcea9a8ab9b74083b51c6439a485762c4cfbd45852876ad473a54f40bd0e5d",
+      "origin": "standing-artifacts/final-rl-sim2sim/validation/rl-calibrated-baseline010.json"
+    },
+    "release-data/final-rl-sim2sim/validation/rl-calibrated-baseline025.json": {
+      "original_sha256": "c137bbb176f61603733882a4d04f456f2439d92b2b7164e158485459e3b0038a",
+      "origin": "standing-artifacts/final-rl-sim2sim/validation/rl-calibrated-baseline025.json"
+    },
+    "release-data/cem15-back-support/candidate-b.npz": {
+      "original_sha256": "24f5ab2de5ec38dcba1697688704c009cb9d3c4b38b497843951d37a7d4baa26",
+      "origin": "standing-artifacts/cem15-back-support/candidate-b.npz"
+    },
+    "release-data/cem17-substep-landing/candidate-a.npz": {
+      "original_sha256": "b8c585ad8c51e833bdca6b949d1728f642977ce48f2bde98e3dab79fcbc24a4c",
+      "origin": "standing-artifacts/cem17-substep-landing/candidate-a.npz"
+    },
+    "release-data/rl03-feedback-aligned/model_499.torchscript": {
+      "original_sha256": "68558a727f05b9f7a1a96d959d0bd3dd685c58d440132067bc1cb3de61f73c27",
+      "origin": "standing-artifacts/rl03-feedback-aligned/model_499.torchscript"
+    },
+    "release-data/rl03-feedback-aligned/agent.json": {
+      "original_sha256": "1ece0c3cb9353c50bebd31cce076429cc7811044786eec147037a9e34d8cc26a",
+      "origin": "standing-artifacts/rl03-feedback-aligned/agent.json"
+    },
+    "release-data/rl03-feedback-aligned/contract.json": {
+      "original_sha256": "7ad7f1c22021b19e2fd633fa583bdbb872a648a7769f68eba17102c6ff79b6da",
+      "origin": "standing-artifacts/rl03-feedback-aligned/contract.json"
+    },
+    "release-data/rl03-feedback-aligned/scene/scene.xml": {
+      "original_sha256": "635fe5ce780d0ee412786396fe8054b120922d9d150277ff6a0c21d2e84bfe2e",
+      "origin": "standing-artifacts/rl03-feedback-aligned/scene/scene.xml"
+    }
+  }
+}

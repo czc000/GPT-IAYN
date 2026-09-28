@@ -1,0 +1,23 @@
+{
+  "relocated_with_spaces": true,
+  "training_imports_blocked": true,
+  "native_max_diff": {
+    "qpos": 0.0,
+    "stats": 0.0,
+    "observations": 0.0,
+    "targets": 0.0
+  },
+  "procedural_seed": {
+    "fps": 0.0,
+    "joint_pos": 0.0,
+    "joint_vel": 0.0,
+    "body_pos_w": 0.0,
+    "body_quat_w": 0.0,
+    "body_lin_vel_w": 0.0,
+    "body_ang_vel_w": 0.0,
+    "qpos": 0.0,
+    "body_names": true,
+    "joint_names": true,
+    "time": 0.0
+  }
+}

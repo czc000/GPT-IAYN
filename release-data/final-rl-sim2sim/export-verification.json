@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "providers": [
+    "CPUExecutionProvider"
+  ],
+  "comparisons": [
+    {
+      "source": "artifacts/rl-calibrated-native-video/seed0.npz",
+      "frames": 131,
+      "onnx_torchscript_max_error_rad": 2.9802322387695312e-08,
+      "torchscript_recorded_target_max_error_rad": 2.9373168786150927e-08
+    },
+    {
+      "source": "artifacts/rl-isaac/gain0.5-online-video/trajectory.npz",
+      "frames": 131,
+      "onnx_torchscript_max_error_rad": 1.1920928955078125e-07,
+      "torchscript_recorded_target_max_error_rad": 5.960464477539063e-08
+    }
+  ],
+  "rendering_vs_headless_substep_max_error": 0.0,
+  "policy_sha256": "076709221561fbadb6595dba122a965a014c33533021251618dbff8ec66ea624"
+}

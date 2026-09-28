@@ -1,0 +1,6 @@
+{
+  "observation_count": 131,
+  "torchscript_gain_max_error": 0.0,
+  "onnx_reference_max_error": 3.055902197957039e-10,
+  "onnx_execution_backend": "onnx.reference.ReferenceEvaluator"
+}
