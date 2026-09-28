@@ -29,6 +29,8 @@ def clip_done(env):
     return c.time_steps>=c.motion.time_step_total-2
 
 def config(n=2048,height=.8,play=False,start_only=False,dc=False,bar_x=-.7,mat_top=.18,mat_front=-.95):
+    from training_compat import configure_training_runtime
+    configure_training_runtime()
     c=unitree_g1_flat_tracking_env_cfg(play=play)
     c.scene.num_envs=n
     c.scene.env_spacing=0.0  # independent Warp worlds, same local obstacle coordinates

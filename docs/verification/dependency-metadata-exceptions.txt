@@ -1,0 +1,2 @@
+mjlab 1.2.0 has requirement rsl-rl-lib==5.0.1, but you have rsl-rl-lib 2.3.1.
+mjlab 1.2.0 has requirement torch>=2.7.0, but you have torch 2.6.0+cu124.

@@ -36,6 +36,8 @@ flowchart LR
 Python **3.11** is the tested interpreter. The native path needs no mjlab, Isaac Sim or training GPU. Video rendering needs an available OpenGL backend; on headless Linux use EGL.
 
 ```bash
+git clone https://github.com/czc000/GPT-IAYN.git
+cd GPT-IAYN
 python3.11 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements/eval.txt

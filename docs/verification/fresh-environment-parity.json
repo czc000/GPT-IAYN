@@ -1,0 +1,46 @@
+{
+  "frozen_rollout": {
+    "qpos": 0.0,
+    "stats": 0.0,
+    "observations": 0.0,
+    "targets": 0.0
+  },
+  "seed": {
+    "fps": 0.0,
+    "joint_pos": 0.0,
+    "joint_vel": 0.0,
+    "body_pos_w": 0.0,
+    "body_quat_w": 0.0,
+    "body_lin_vel_w": 0.0,
+    "body_ang_vel_w": 0.0,
+    "qpos": 0.0,
+    "body_names": true,
+    "joint_names": true,
+    "time": 0.0
+  },
+  "teacher": {
+    "qpos": 0.0,
+    "qvel": 0.0,
+    "body_pos_w": 0.0,
+    "body_quat_w": 0.0,
+    "body_lin_vel_w": 0.0,
+    "body_ang_vel_w": 0.0,
+    "target": 0.0,
+    "gravity": 0.0,
+    "gyro": 0.0,
+    "joint_pos": 0.0,
+    "joint_vel": 0.0,
+    "fps": 0.0,
+    "body_names": true,
+    "joint_names": true,
+    "time": 0.0
+  },
+  "nominal_success": true,
+  "video_frames": 131,
+  "minimum_clearance_m": 0.03372031516961872,
+  "new_export": {
+    "observations": 131,
+    "torchscript_max_error": 0.0,
+    "onnx_max_error": 2.6193447411060333e-10
+  }
+}

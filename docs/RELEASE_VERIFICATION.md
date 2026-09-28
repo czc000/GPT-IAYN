@@ -4,7 +4,7 @@ This report validates packaging and execution of the preserved standing-jump exp
 
 | Check | Observed result |
 |---|---|
-| Unit/contract/acceptance suite | 18 tests passed |
+| Unit/contract/acceptance suite | 20 tests passed, including two Warp compatibility regressions |
 | Release manifest | All 40 immutable files verified |
 | Frozen PPO online native rollout | Strict 0.8 m acceptance passed, zero bar contacts; minimum clearance 0.0337203 m |
 | Frozen rollout compared with original | All qpos, statistics, observations and targets exactly equal (maximum difference 0) |
@@ -28,8 +28,24 @@ Machine-readable array comparisons: [native and teacher](verification/native-and
 - An initial CEM smoke request of 32 environments supplied only eight candidates for a 12-elite search and failed. The entry now rejects such input before environment creation. The 64-environment check passed without changing the historical valid-budget algorithm.
 - Promoted CEM packages now store `reference.npz` relative to the package, avoiding duplicated relative directory prefixes.
 
-## What was not rerun or established
+## Fresh-environment publication check
 
-The GPU checks used the existing historical training environment, including its documented dependency metadata exceptions. The fresh training-environment installer has **not** been validated from an empty environment. The native import isolation and asset-download checks do not establish a full clean-install result.
+On 2026-09-28, `tools/setup_training.sh` installed into a new Python 3.11.15 virtual environment with `include-system-site-packages = false`. No existing training packages or edited site-packages were inherited. The test used an available RTX 4090 and the host's existing process-local NVIDIA driver-library setup; no system environment was changed.
+
+The first GPU attempt exposed a historical local mjlab patch: official mjlab 1.2.0 calls the removed `warp.context` API. A regression test reproduced the failure. `training_compat.py` now performs the same CUDA-graph driver/memory-pool eligibility check using Warp's public driver API, activated by the task configuration within the process. A source comparison found two other historical mjlab changes (observation history layout and velocity GUI ranges), neither needed by this experiment; they were not copied. The installed RSL-RL Python source matched the pinned fork.
+
+With that explicit compatibility module, the clean environment completed:
+
+- All 20 tests, artifact restoration and online MuJoCo recording (131 video frames; full video decode passed).
+- Procedural seed and physical teacher regeneration, with exact array equality to the immutable references.
+- Frozen PPO online rollout with exact qpos/statistics/observation/target equality to the original, strict nominal success and 0.0337203 m clearance.
+- 64-environment / two-update PPO training (4096 steps), TorchScript and ONNX export, and one CEM generation (64 environments; 0/4 accepted, not a new successful jump).
+- Export comparison across 131 observations: TorchScript error 0; ONNX reference evaluator max error 2.62e-10 rad.
+
+`pip check` reports exactly the two documented mjlab metadata exceptions (Torch and RSL-RL), with no additional conflicts. This is a verified runnable historical stack, not a claim of clean dependency metadata. Evidence: [stage results](verification/fresh-environment-stages.json), [array/export parity](verification/fresh-environment-parity.json), [installed versions](verification/fresh-environment-packages.txt), [metadata exceptions](verification/dependency-metadata-exceptions.txt).
+
+The temporary environment, source copy, caches and smoke artifacts are disposable. Only the concise evidence above is part of the release.
+
+## What was not rerun or established
 
 No new 500-update PPO training, convergence of a from-zero CEM run, 50-trial holdout, PhysX rollout or real-G1 execution was performed for packaging. Frozen model files and historical results remain the original ones. The optional PhysX path was updated for relocatable contracts and syntax-checked only. New smoke weights are not the published successful policy and are excluded from release data.

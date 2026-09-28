@@ -1,0 +1,49 @@
+{
+  "fresh_virtualenv": true,
+  "stages": {
+    "pip-check": {
+      "exit_code": 1,
+      "seconds": 0.328
+    },
+    "restore": {
+      "exit_code": 0,
+      "seconds": 0.263
+    },
+    "tests": {
+      "exit_code": 0,
+      "seconds": 11.197
+    },
+    "demo": {
+      "exit_code": 0,
+      "seconds": 7.536
+    },
+    "seed": {
+      "exit_code": 0,
+      "seconds": 5.538
+    },
+    "teacher": {
+      "exit_code": 0,
+      "seconds": 2.38
+    },
+    "training": {
+      "exit_code": 0,
+      "seconds": 87.45
+    },
+    "export": {
+      "exit_code": 0,
+      "seconds": 1.923
+    },
+    "cem": {
+      "exit_code": 0,
+      "seconds": 14.825
+    },
+    "parity": {
+      "exit_code": 0,
+      "seconds": 2.202
+    },
+    "freeze": {
+      "exit_code": 0,
+      "seconds": 0.259
+    }
+  }
+}
