@@ -1,10 +1,10 @@
 """Actor dependencies and deployment output contract, independent of reward code."""
 import unittest,json
 import numpy as np,mujoco,torch
-from scene import ROOT
-from evaluate import load_native_model
-from check_rl import native_obs
-from policy_export import TargetActor
+from gpt_iayn_core.scene import ROOT
+from gpt_iayn_core.evaluate import load_native_model
+from gpt_iayn_core.observations import native_obs
+from gpt_iayn_core.policy_export import TargetActor
 
 class ActorContractTests(unittest.TestCase):
     def setUp(self):

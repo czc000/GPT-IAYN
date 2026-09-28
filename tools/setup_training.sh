@@ -12,4 +12,5 @@ py="$envdir/bin/python"
 # Historical compatibility runner, not PyPI's unrelated 2.3.1 implementation.
 # mjlab metadata expects torch>=2.7 / RSL-RL 5.0.1; see docs/INSTALL.md.
 "$py" -m pip install --no-deps mjlab==1.2.0 'rsl-rl-lib @ git+https://github.com/ccrpRepo/AMP_mjlab.git@2d6b0d1b1c00681accfe4bd9f244fad1eaa51940#subdirectory=rsl_rl'
+"$py" -m pip install --no-deps -e .
 echo "Created $envdir. Read docs/INSTALL.md before selecting an idle training GPU."

@@ -1,6 +1,6 @@
 import unittest,numpy as np,torch
-from scene import ROOT
-from feedback_actor import FeedbackActor
+from gpt_iayn_core.scene import ROOT
+from gpt_iayn_core.feedback_actor import FeedbackActor
 class FeedbackTests(unittest.TestCase):
     def test_no_time_only_correction_and_state_gradients_survive(self):
         z=np.load(ROOT/'artifacts/rl-reference/motion.npz');net=torch.nn.Sequential(torch.nn.Linear(152,64),torch.nn.ELU(),torch.nn.Linear(64,29))

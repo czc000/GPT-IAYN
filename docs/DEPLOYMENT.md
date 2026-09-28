@@ -3,8 +3,8 @@
 ## Native MuJoCo
 
 ```bash
-python export_policy.py --run artifacts/ppo --checkpoint model_499 --gain 0.5 --output artifacts/ppo-export
-python evaluate_rl.py --run artifacts/ppo-export --policy artifacts/ppo-export/policy.torchscript --output artifacts/ppo-eval --video
+python scripts/export_policy.py --run artifacts/ppo --checkpoint model_499 --gain 0.5 --output artifacts/ppo-export
+python scripts/evaluate_rl.py --run artifacts/ppo-export --policy artifacts/ppo-export/policy.torchscript --output artifacts/ppo-eval --video
 ```
 
 The export contains absolute-target TorchScript/ONNX, local reference commands, evaluation initialization, scene and motor/physics contract. Gain 0.5 scales the learned target correction, not torque. The public exporter supports gain interpolation in [0,1]; the old wider calibration sweep remains in the historical script.
@@ -13,11 +13,11 @@ The online evaluator initializes qpos once, reads state and calls the policy at 
 
 ## Optional Isaac Sim / PhysX
 
-Install compatible Isaac Sim 4.5 / Isaac Lab separately and set `ISAAC_PYTHON`. From the native environment run `prepare_isaac_model.py` to flatten the frozen CEM MJCF; then use the Isaac environment:
+Install compatible Isaac Sim 4.5 / Isaac Lab separately and set `ISAAC_PYTHON`. From the native environment run `scripts/isaac/prepare_isaac_model.py` to flatten the frozen CEM MJCF; then use the Isaac environment:
 
 ```bash
-./isaac_runtime.sh isaac_convert.py --headless
-./isaac_runtime.sh evaluate_isaac.py --headless --device cpu \
+./scripts/isaac_runtime.sh scripts/isaac/isaac_convert.py --headless
+./scripts/isaac_runtime.sh scripts/isaac/evaluate_isaac.py --headless --device cpu \
   --run artifacts/final-rl-sim2sim --policy artifacts/final-rl-sim2sim/policy.torchscript \
   --output artifacts/physx-new --video --enable_cameras
 ```

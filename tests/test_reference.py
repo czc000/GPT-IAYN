@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from scene import ROOT, make_scene
+from gpt_iayn_core.scene import ROOT, make_scene
 class ReferenceTests(unittest.TestCase):
     def test_reference_contract(self):
         z=np.load(ROOT/'artifacts/reference/motion.npz'); m=make_scene().compile()

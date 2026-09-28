@@ -4,7 +4,7 @@ The MIT license covers project-specific code and documentation. Project-generate
 
 | Component | Origin / role | Treatment |
 |---|---|---|
-| mjlab 1.2.0 | https://github.com/mujocolab/mjlab — environment API, tracking task, G1 configuration | Apache-2.0; license in `third_party/mjlab-LICENSE.txt`. mjlab's inherited third-party portions retain their notices. The project's `training_compat.py` preserves its CUDA-graph eligibility rule with the current Warp API without editing the installed package. |
+| mjlab 1.2.0 | https://github.com/mujocolab/mjlab — environment API, tracking task, G1 configuration | Apache-2.0; license in `third_party/mjlab-LICENSE.txt`. mjlab's inherited third-party portions retain their notices. The project's `src/gpt_iayn_core/training_compat.py` preserves its CUDA-graph eligibility rule with the current Warp API without editing the installed package. |
 | MuJoCo / MuJoCo-Warp | https://github.com/google-deepmind/mujoco ; https://github.com/google-deepmind/mujoco_warp | Separately installed dependencies; retain their upstream licenses. |
 | RSL-RL compatibility implementation | https://github.com/ccrpRepo/AMP_mjlab at `2d6b0d1b1c00681accfe4bd9f244fad1eaa51940`, `rsl_rl/` | Dependency fetched from upstream, not copied into this repository. Core files identify RSL-RL, Isaac Lab, Legged Lab and TienKung-Lab authors and BSD-3-Clause terms. This experiment uses PPO, not AMP rewards. |
 | RSL-RL | https://github.com/leggedrobotics/rsl_rl | PPO foundation, BSD-3-Clause. |

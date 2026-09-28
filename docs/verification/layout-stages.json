@@ -1,0 +1,51 @@
+{
+  "isolated_project_install": true,
+  "shared_pinned_dependencies": true,
+  "fresh_dependency_install": false,
+  "stages": {
+    "pip-check": {
+      "exit_code": 1,
+      "seconds": 1.144
+    },
+    "restore": {
+      "exit_code": 0,
+      "seconds": 0.263
+    },
+    "tests": {
+      "exit_code": 0,
+      "seconds": 13.496
+    },
+    "demo": {
+      "exit_code": 0,
+      "seconds": 6.54
+    },
+    "seed": {
+      "exit_code": 0,
+      "seconds": 5.562
+    },
+    "teacher": {
+      "exit_code": 0,
+      "seconds": 2.377
+    },
+    "training": {
+      "exit_code": 0,
+      "seconds": 84.355
+    },
+    "export": {
+      "exit_code": 0,
+      "seconds": 2.004
+    },
+    "cem": {
+      "exit_code": 0,
+      "seconds": 14.958
+    },
+    "parity": {
+      "exit_code": 0,
+      "seconds": 2.208
+    },
+    "freeze": {
+      "exit_code": 0,
+      "seconds": 0.468
+    }
+  }
+}

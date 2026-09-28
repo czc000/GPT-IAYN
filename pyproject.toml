@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpt-iayn"
+version = "0.1.1"
+description = "GPT-built standing G1 high-jump experiment"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+
+[project.scripts]
+gpt-iayn = "gpt_iayn_core.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

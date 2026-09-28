@@ -4,7 +4,7 @@ from types import SimpleNamespace
 from unittest.mock import patch
 import warp as wp
 from mjlab.sim.sim import Simulation
-from task import config
+from gpt_iayn_core.task import config
 
 
 class TrainingCompatibilityTests(unittest.TestCase):

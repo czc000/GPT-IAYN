@@ -14,6 +14,6 @@ G1 qpos is N×36 (root position 3 + root quaternion 4 + joints 29), qvel is N×3
 
 Observation slices: 0:29 target, 29:58 reference joints, 58:87 reference velocity×0.05, 87:116 actual-reference joint error, 116:145 actual velocity×0.05, 145:148 projected gravity, 148:151 gyro×0.1, 151 phase `k/130`.
 
-`contract.json` declares physics, motor parameters, order and reference path. Public frozen references are relative to the contract directory; newly generated local training runs can record absolute paths until exported. `export_policy.py` writes a portable relative contract.
+`contract.json` declares physics, motor parameters, order and reference path. Public frozen references are relative to the contract directory; newly generated local training runs can record absolute paths until exported. `scripts/export_policy.py` writes a portable relative contract.
 
 `release-data/PROVENANCE.json` binds files to the original standing commit; `SHA256SUMS` verifies release bytes. JSON paths were normalized for publication; numerical reference arrays and original frozen policy weights were not changed. Mesh files are excluded from Git and enumerated separately in `ASSETS.json`.

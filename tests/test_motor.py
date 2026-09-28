@@ -1,5 +1,5 @@
 import unittest,numpy as np
-from motor import torque_numpy,dc_robot_cfg,parameters
+from gpt_iayn_core.motor import torque_numpy,dc_robot_cfg,parameters
 from mjlab.asset_zoo.robots import get_g1_robot_cfg
 class MotorTests(unittest.TestCase):
     def test_torque_falls_to_zero_at_no_load_speed(self):

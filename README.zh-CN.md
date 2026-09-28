@@ -25,9 +25,10 @@ GPT 完成项目特定的场景与动作生成脚本、搜索与训练实现、�
 
 ## 如何使用
 
-只看冻结策略效果，安装 `requirements/eval.txt` 后执行：
+只看冻结策略效果，安装 `requirements/eval.txt` 后执行（建议 Python 3.11）：
 
 ```bash
+python -m pip install --no-deps -e .
 python gpt_iayn.py restore
 python gpt_iayn.py demo
 MUJOCO_GL=egl python gpt_iayn.py demo --video --output artifacts/demo-video
@@ -47,10 +48,18 @@ Actor 输入 152 维：参考目标角、参考关节角与速度、实际关节
 
 最终发布增益为 0.5。native MuJoCo 小扰动为 19/50、大扰动为 3/50；PhysX 有经过增益标定的一条 nominal 通过记录，最小间隙约 1.9 毫米。尚未证明广泛鲁棒性，没有真机测试。旧 CEM 的 19/20 不能当作 PPO 成功率。
 
-详情：[结果](docs/RESULTS.md)、[历史 PPO 报告](RL_RESULTS.md)、[方法与输入契约](docs/RL_METHOD.md)、[数据字段](docs/DATA_SCHEMA.md)。
+详情：[结果](docs/RESULTS.md)、[历史 PPO 报告](docs/history/PPO_RESULTS.md)、[方法与输入契约](docs/RL_METHOD.md)、[数据字段](docs/DATA_SCHEMA.md)。
 
 ## 开源范围
 
 项目自身代码与文档采用 [MIT](LICENSE)；上游代码、模型和素材遵循各自许可，见 [第三方说明](THIRD_PARTY_NOTICES.md)。仓库：[czc000/GPT-IAYN](https://github.com/czc000/GPT-IAYN)。
 
 本次整理的实际检查和未验证项见 [发布验证记录](docs/RELEASE_VERIFICATION.md)，包括逐帧一致性、数据再生成、短训练和导出检查。已在全新隔离环境完成安装、20 项测试、在线仿真、数据再生成、短训练及模型导出验证；两项历史依赖元数据例外与显式 Warp 兼容处理已写入安装文档。
+
+## 目录怎么看
+
+根目录只保留一个 Python 入口 `gpt_iayn.py`。`src/gpt_iayn_core/` 是可导入的核心实现，`scripts/` 是正式运行脚本，`tools/validation/` 是验收检查，`experiments/legacy/` 保存历史探索。旧实验报告放在 `docs/history/`。数据、训练权重与视频保留原样。
+
+旧的统一命令 `python gpt_iayn.py demo/train/...` 保持可用；直接调用脚本时改用 `python scripts/train_rl.py ...` 等新路径。详见 [脚本索引](scripts/README.md) 和 [迁移表](docs/LAYOUT.md)。
+
+本次目录重构通过 21 项测试，重新生成的数据和在线推理轨迹与原版逐帧一致，并完成短训练及导出检查；验收源码和冻结模型没有变化。

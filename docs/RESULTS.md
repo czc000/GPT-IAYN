@@ -19,4 +19,4 @@ Strict acceptance includes physical airborne motion, whole-body passage above/be
 
 The actor depends on a fixed timed reference. Its state inputs are joint sensing and IMU-like quantities; simulator measurements are idealized. Hardware latency, state estimation, calibration, motor behavior, landing impact safety and recovery remain unvalidated.
 
-See `../RL_RESULTS.md` for the original detailed PPO analysis and `../release-data/final-rl-sim2sim/validation/` for actual holdout results. New packaging checks are listed separately in `RELEASE_VERIFICATION.md`; they must not be confused with new policy training.
+See `../docs/history/PPO_RESULTS.md` for the original detailed PPO analysis and `../release-data/final-rl-sim2sim/validation/` for actual holdout results. New packaging checks are listed separately in `RELEASE_VERIFICATION.md`; they must not be confused with new policy training.

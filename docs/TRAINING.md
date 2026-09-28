@@ -3,13 +3,13 @@
 Prepare the environment and data using [INSTALL.md](INSTALL.md) and [DATA_GENERATION.md](DATA_GENERATION.md).
 
 ```bash
-HIGHJUMP_GPU=0 ./runtime.sh gpt_iayn.py train --name ppo --num-envs 2048 --iterations 500
+HIGHJUMP_GPU=0 ./scripts/runtime.sh gpt_iayn.py train --name ppo --num-envs 2048 --iterations 500
 ```
 
 For a new accepted reference:
 
 ```bash
-HIGHJUMP_GPU=0 ./runtime.sh gpt_iayn.py train --name ppo-new \
+HIGHJUMP_GPU=0 ./scripts/runtime.sh gpt_iayn.py train --name ppo-new \
   --reference artifacts/new-reference/motion.npz --teacher artifacts/new-teacher
 ```
 

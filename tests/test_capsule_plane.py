@@ -1,6 +1,6 @@
 import unittest,numpy as np,mujoco
 from scipy.spatial.transform import Rotation
-from audit_capsule_plane import plane_minimum
+from gpt_iayn_core.geometry import plane_minimum
 class PlaneTests(unittest.TestCase):
  def test_sphere_slice_and_no_intersection(self):
   m=mujoco.MjModel.from_xml_string('<mujoco><worldbody><geom name="sphere" type="sphere" size=".05" pos="-.7 0 .9"/></worldbody></mujoco>');d=mujoco.MjData(m);mujoco.mj_forward(m,d)

@@ -1,5 +1,5 @@
 import unittest
-from acceptance import assess
+from gpt_iayn_core.acceptance import assess
 
 class AcceptanceTests(unittest.TestCase):
     def trace(self):

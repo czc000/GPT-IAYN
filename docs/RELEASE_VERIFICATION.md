@@ -32,7 +32,7 @@ Machine-readable array comparisons: [native and teacher](verification/native-and
 
 On 2026-09-28, `tools/setup_training.sh` installed into a new Python 3.11.15 virtual environment with `include-system-site-packages = false`. No existing training packages or edited site-packages were inherited. The test used an available RTX 4090 and the host's existing process-local NVIDIA driver-library setup; no system environment was changed.
 
-The first GPU attempt exposed a historical local mjlab patch: official mjlab 1.2.0 calls the removed `warp.context` API. A regression test reproduced the failure. `training_compat.py` now performs the same CUDA-graph driver/memory-pool eligibility check using Warp's public driver API, activated by the task configuration within the process. A source comparison found two other historical mjlab changes (observation history layout and velocity GUI ranges), neither needed by this experiment; they were not copied. The installed RSL-RL Python source matched the pinned fork.
+The first GPU attempt exposed a historical local mjlab patch: official mjlab 1.2.0 calls the removed `warp.context` API. A regression test reproduced the failure. `src/gpt_iayn_core/training_compat.py` now performs the same CUDA-graph driver/memory-pool eligibility check using Warp's public driver API, activated by the task configuration within the process. A source comparison found two other historical mjlab changes (observation history layout and velocity GUI ranges), neither needed by this experiment; they were not copied. The installed RSL-RL Python source matched the pinned fork.
 
 With that explicit compatibility module, the clean environment completed:
 
@@ -49,3 +49,21 @@ The temporary environment, source copy, caches and smoke artifacts are disposabl
 ## What was not rerun or established
 
 No new 500-update PPO training, convergence of a from-zero CEM run, 50-trial holdout, PhysX rollout or real-G1 execution was performed for packaging. Frozen model files and historical results remain the original ones. The optional PhysX path was updated for relocatable contracts and syntax-checked only. New smoke weights are not the published successful policy and are excluded from release data.
+
+
+## v0.1.1 directory cleanup verification
+
+The root now contains one Python launcher, with importable implementation in `src/gpt_iayn_core/`, supported scripts in `scripts/`, validators in `tools/validation/` and exploratory scripts in `experiments/legacy/`. Shared native observations and capsule-plane geometry no longer come from diagnostic modules. All 40 immutable release files and the acceptance source bytes are unchanged.
+
+This verification used a disposable virtual environment with **shared existing pinned dependencies** and an isolated editable install of the reorganized project; it was not another fresh dependency download. The previous clean dependency-install evidence above remains applicable to the unchanged requirement pins.
+
+- 21 tests passed, including import isolation from an unrelated working directory with training packages blocked.
+- Editable installation and the installed `gpt-iayn` CLI worked; six direct entry points accepted `--help` from outside the checkout.
+- Online native inference passed strict nominal acceptance; the 131-frame video decoded fully. qpos, statistics, observations and joint targets exactly matched the original frozen rollout.
+- Regenerated procedural seed and physical teacher arrays exactly matched the release data.
+- Short PPO training (64 environments, two iterations, 4096 steps), one CEM generation and TorchScript/ONNX export completed. CEM smoke is an interface check, not newly accepted jump evidence.
+- Export parity across 131 observations: TorchScript error 0, ONNX reference evaluator max error 2.33e-10 rad.
+- The promotion command accepted historical hash-matched evidence and created a valid relative-reference package. An output-path regression discovered during restructuring was corrected and this path rerun successfully.
+- Python/shell syntax and local Markdown links checked. No full PPO retraining, PhysX rerun or hardware evaluation was performed.
+
+Evidence: [layout stages](verification/layout-stages.json), [exact data and export comparisons](verification/layout-parity.json). Temporary verification environments and generated smoke outputs are removed after publication.

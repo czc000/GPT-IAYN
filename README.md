@@ -41,6 +41,7 @@ cd GPT-IAYN
 python3.11 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements/eval.txt
+python -m pip install --no-deps -e .
 python gpt_iayn.py restore
 python gpt_iayn.py demo
 MUJOCO_GL=egl python gpt_iayn.py demo --video --output artifacts/demo-video
@@ -60,10 +61,10 @@ source .venv-train/bin/activate
 python gpt_iayn.py restore
 python gpt_iayn.py seed
 python gpt_iayn.py teacher
-HIGHJUMP_GPU=0 ./runtime.sh gpt_iayn.py train --name ppo --iterations 500
-python export_policy.py --run artifacts/ppo --checkpoint model_499 \
+HIGHJUMP_GPU=0 ./scripts/runtime.sh gpt_iayn.py train --name ppo --iterations 500
+python scripts/export_policy.py --run artifacts/ppo --checkpoint model_499 \
   --gain 0.5 --output artifacts/ppo-export
-python evaluate_rl.py --run artifacts/ppo-export \
+python scripts/evaluate_rl.py --run artifacts/ppo-export \
   --policy artifacts/ppo-export/policy.torchscript --output artifacts/ppo-eval --video
 ```
 
@@ -81,20 +82,32 @@ The short path reconstructs the teacher from the bundled CEM controller. To opti
 
 MuJoCo-Warp → native MuJoCo is a **backend transfer**. The recorded PhysX result is a separate cross-engine test after feedback-gain calibration, not zero-shot transfer or proven cross-engine robustness. The earlier CEM controller's 19/20 statistic is a different experiment and is not the PPO success rate. See [results and limitations](docs/RESULTS.md).
 
-## Repository map
+## Repository layout
 
-| Entry | Purpose |
-|---|---|
-| `gpt_iayn.py` | Public CLI: restore, verify, demo, seed, teacher, search, train |
-| `prepare.py`, `cem_refine.py`, `prepare_rl.py` | Synthetic seed → optimized commands → physical demonstration |
-| `rl_task.py`, `feedback_actor.py`, `train_rl.py` | PPO environment, feedback architecture and training |
-| `evaluate_rl.py`, `acceptance.py`, `motor.py` | Online native inference, strict acceptance and actuator model |
-| `export_policy.py` | Export a selected run with explicit feedback gain |
-| `release-data/` | Immutable generated data, models, evidence and hashes |
-| `tools/`, `requirements/`, `tests/` | Asset restoration, environment setup and verification |
-| `docs/` | Methods, data schema, provenance, limitations and release checks |
+```text
+gpt_iayn.py             # One root CLI: restore / demo / seed / teacher / search / train
+src/gpt_iayn_core/       # Importable scene, actuator, policy, observation and evaluation code
+scripts/                # Supported data generation, training, export and evaluation commands
+  isaac/                # Optional Isaac Sim / PhysX conversion and execution
+tools/                  # Training setup and independent validation utilities
+experiments/legacy/     # Earlier searches, diagnostic runs and old fixture-dependent tests
+tests/                  # Current regression suite
+docs/                   # Methods, results, verification and historical reports
+release-data/           # Immutable references, trained models, contracts and evidence
+media/                  # Recorded simulation videos
+```
 
-Historical auxiliary scripts remain for traceability. The new public exporter is `export_policy.py`; `package_rl.py` and `calibrate_feedback_gain.py` retain the original experiment-specific paths and are not the recommended release entry points.
+Start with `python gpt_iayn.py --help`. After editable installation, `gpt-iayn` is an equivalent command. See the [script index](scripts/README.md), [validation index](tools/validation/README.md) and [legacy index](experiments/legacy/README.md). Shared runtime code never imports a validation or legacy script.
+
+For example, export with `python scripts/export_policy.py ...`, evaluate with `python scripts/evaluate_rl.py ...`, and select a GPU with `HIGHJUMP_GPU=0 ./scripts/runtime.sh gpt_iayn.py train ...`. The root CLI commands are unchanged; old direct root-script paths moved in v0.1.1. A complete [migration map](docs/LAYOUT.md) lists the new paths.
+
+Run current tests after restoring data, in the training environment:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Historical auxiliary scripts remain for traceability. They may require absent historical fixtures and are not part of the supported quick-start workflow.
 
 ## Attribution and license
 

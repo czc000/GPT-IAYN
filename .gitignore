@@ -5,3 +5,5 @@ artifacts/
 MUJOCO_LOG.TXT
 .DS_Store
 *.egg-info/
+build/
+dist/
